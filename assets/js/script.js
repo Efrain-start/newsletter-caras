@@ -1,7 +1,7 @@
-// assets/js/script.js
+
 
 (function () {
-  // Selecciones
+
   const form = document.getElementById('subscriptionForm');
   if (!form) return;
 
@@ -12,7 +12,7 @@
   const emailErrorEl = document.getElementById('emailError');
   const formMessageEl = document.getElementById('formMessage');
 
-  // Utilidades
+
   const emailRegex =
     /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
@@ -34,7 +34,6 @@
     formMessageEl.className = `form-message ${type === 'success' ? 'form-message--success' : 'form-message--error'}`;
   }
 
-  // Validaciones individuales (para usar en blur/input)
   function validateName() {
     const value = nameInput.value.trim();
     if (value.length === 0) {
@@ -61,7 +60,6 @@
     return true;
   }
 
-  // Eventos: validación en tiempo real (opcional pero recomendado)
   nameInput.addEventListener('blur', validateName);
   emailInput.addEventListener('blur', validateEmail);
   nameInput.addEventListener('input', () => {
@@ -73,20 +71,18 @@
 
   // Envío del formulario
   form.addEventListener('submit', (e) => {
-    e.preventDefault(); // prevenimos envío real para validar
+    e.preventDefault();
     clearErrors();
 
     const isNameOk = validateName();
     const isEmailOk = validateEmail();
 
     if (isNameOk && isEmailOk) {
-      // Simulación de éxito (aquí iría tu fetch/AJAX si aplicara)
       showFormMessage('¡Listo! Tu suscripción se realizó con éxito. 🎉', 'success');
       form.reset();
-      nameInput.focus(); // accesibilidad: regresamos el foco al inicio del form
+      nameInput.focus();
     } else {
       showFormMessage('Revisa los campos marcados e intenta de nuevo.', 'error');
-      // Llevar foco al primer error
       if (!isNameOk) {
         nameInput.focus();
       } else if (!isEmailOk) {

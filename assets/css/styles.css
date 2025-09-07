@@ -57,7 +57,7 @@
   --space-8: 4rem;
 }
 
-/* Reset suave */
+/* Reset */
 *,
 *::before,
 *::after{ box-sizing: border-box; }
@@ -93,14 +93,13 @@ body{
   list-style:none; margin:0; padding:0;
 }
 
-/* Shared icon styles */
+/* icon styles */
 .site-nav__link svg,
 .footer__social svg {
   width: 18px;
   height: 18px;
 }
 
-/* ===== Header icons inline (sin círculos) ===== */
 .site-nav--inline .site-nav__list {
   display: flex;
   align-items: center;
@@ -108,14 +107,12 @@ body{
 }
 
 .site-nav--inline .site-nav__link {
-  /* quita el círculo */
   background: transparent;
   width: auto;
   height: auto;
   padding: 0;
   border-radius: 0;
 
-  /* look inline */
   color: var(--text-1);
   display: inline-flex;
   align-items: center;
@@ -139,7 +136,6 @@ body{
   height: 20px;
 }
 
-/* Opcional: en pantallas pequeñas, separa un poco más */
 @media (max-width: 48rem){
   .site-nav--inline .site-nav__list { gap: 1rem; }
 }
@@ -181,7 +177,6 @@ body{
   gap: .5rem;
 }
 
-/* Marcador custom con ::before */
 .hero__bullets li{
   position: relative;
   padding-left: 1.6rem;      
@@ -299,17 +294,17 @@ body{
 
 .cover {
   position: relative;
-  aspect-ratio: 3 / 4; /* proporción de revista */
+  aspect-ratio: 3 / 4;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-1);
-  background: #f4f4f4; /* fallback mientras carga */
+  background: #f4f4f4;
 }
 
 .cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* recorta para llenar el marco */
+  object-fit: cover;
   display: block;
 }
 
@@ -337,7 +332,6 @@ body{
 .testimonial__quote:after{ content: close-quote; }
 .testimonial__author{ font-weight: 700; }
 
-/* Avatares con iniciales (sin imágenes) */
 .testimonial__avatar-fallback {
   width: 56px;
   height: 56px;
@@ -383,7 +377,7 @@ body{
 }
 
 .footer__social a:hover {
-  background: #b81512; /* darker red on hover */
+  background: #b81512; 
 }
 
 .footer__social svg {
@@ -392,8 +386,6 @@ body{
 }
 
 
-/* Responsive */
-/* <= 1024px */
 @media (max-width: 64rem){
   .hero__grid,
   .highlight__grid{
@@ -423,12 +415,12 @@ body{
   box-shadow: 0 0 0 4px rgba(224,32,24,.12);
 }
 
-/* Texto de error por campo */
+/* Texto de error */
 .field-error {
   display: block;
   margin-top: .35rem;
   font-size: .9rem;
-  color: #B00020;           /* rojo más oscuro para contraste */
+  color: #B00020;
   font-weight: 700;
 }
 
